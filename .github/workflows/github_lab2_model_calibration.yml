@@ -55,7 +55,7 @@ jobs:
 
     - name: Commit and Push Changes
       run: |
-        git config --global user.email "26876927+justin-aj@users.noreply.github.com"
+        git config --global user.email "ajinfrankj@gmail.com"
         git config --global user.name "justin-aj"
         git add Github_Labs/Lab2/metrics/$metrics_filename Github_Labs/Lab2/models/$model_filename
         git commit -m "Add metrics and updated model"
