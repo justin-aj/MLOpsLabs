@@ -42,7 +42,7 @@ jobs:
     - name: Evaluate Model and Log Metrics
       run: |
         timestamp=$(cat timestamp.txt) # Use the timestamp in your training script
-        python Github_Labs/Lab2/src/evaluate_model.py  --timestamp "$timestamp" # Assuming you have a script for model evaluation
+        python Github_Labs/Lab2/src/evaluate_model.py --timestamp "$timestamp" # Assuming you have a script for model evaluation
         metrics_filename="${timestamp}_metrics.json"
         mv $metrics_filename Github_Labs/Lab2/metrics/$metrics_filename
       continue-on-error: false  # Continue even if evaluation fails
@@ -57,7 +57,7 @@ jobs:
       run: |
         git config --global user.email "26876927+justin-aj@users.noreply.github.com"
         git config --global user.name "justin-aj"
-        git add Labs/Github_Labs/Lab2/metrics/$metrics_filename Github_Labs/Lab2/models/$model_filename
+        git add Github_Labs/Lab2/metrics/$metrics_filename Github_Labs/Lab2/models/$model_filename
         git commit -m "Add metrics and updated model"
         git push
       env:
